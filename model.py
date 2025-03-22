@@ -192,7 +192,7 @@ class BigramLanguageModel(nn.Module):
         if targets is None:
             loss = None
         else:
-            # Get the shape of the logits tensor
+            # Get the shape of the logits tensor. C is the vocabulary size
             B, T, C = logits.shape
 
             # Due to requirements from cross entropy, modify the shapes of logits and targets to pass it through and generate loss
